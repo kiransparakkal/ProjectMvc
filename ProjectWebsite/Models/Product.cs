@@ -11,6 +11,7 @@ namespace ProjectWebsite.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Product
     {
@@ -22,11 +23,19 @@ namespace ProjectWebsite.Models
         }
     
         public int ProductId { get; set; }
+        [Required(ErrorMessage = "SubCategory Id is required")]
+        [Display(Name ="SubCategory Id")]
         public Nullable<int> SubCategoryId { get; set; }
+        [Required(ErrorMessage = "Product Name is required")]
+        [Display(Name = "Product Name")]
         public string ProductName { get; set; }
+        [Required(ErrorMessage = "Brand Name is required")]
+        [Display(Name = "Brand Name")]
         public string BrandName { get; set; }
+        [Required(ErrorMessage = "Stock is required")]
         public Nullable<int> Stock { get; set; }
         public Nullable<int> Discount { get; set; }
+        [Required(ErrorMessage = "Price is required")]
         public Nullable<decimal> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
