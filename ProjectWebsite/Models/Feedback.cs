@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjectWebsite.Models
 {
-	public class feedback
+	public class Feedback
 	{
         [Required]
         [Display(Name = "User ID")]

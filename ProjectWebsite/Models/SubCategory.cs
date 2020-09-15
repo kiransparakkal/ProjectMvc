@@ -11,7 +11,8 @@ namespace ProjectWebsite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class SubCategory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,14 @@ namespace ProjectWebsite.Models
         {
             this.Products = new HashSet<Product>();
         }
-    
+
+        [Required(ErrorMessage = "Subcategory ID is required")]
+        [Display(Name = "Subcategory")]
         public int SubCategoryId { get; set; }
         public Nullable<int> CategoryId { get; set; }
+        [Required(ErrorMessage = "Subcategory Name is required")]
+        [Display(Name = "Subcategory Name")]
         public string SubCategoryName { get; set; }
-    
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }

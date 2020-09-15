@@ -145,7 +145,7 @@ namespace ProjectWebsite.Admin
                 {
                     Session["Userid"] = details.FirstOrDefault().AdminId;
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index","Index","SubCategories");
                 }
                 else
                 {
